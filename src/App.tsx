@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactComponent as Logo } from './assets/cm-logo.svg';
+import { PremiumRecipeCard } from './components/PremiumRecipeCard/PremiumRecipeCard.comp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+    <div className="cm-container">
+      <div className="cm-logo-wrapper">
+        <Logo className="cm-logo"/>
+      </div>
+      <h2>Carb Manager Dev Assignment</h2>
+      <p>See the README file for assignment requirements.</p>
+
+      <ul>
+        <li className="premium-recipe">
+          <PremiumRecipeCard />
+        </li>
+      </ul>
     </div>
+  </div>
   );
 }
 
