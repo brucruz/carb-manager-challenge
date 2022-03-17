@@ -17,14 +17,6 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  body {
-  margin: 0;
-  background: #fff;
-  font-family: 'Barlow', sans-serif !important;
-  font-weight: var(--font-weight-regular);
-    -webkit-font-smoothing: antialiased;
-  }
-
   article,
   aside,
   footer,
@@ -32,6 +24,10 @@ export default createGlobalStyle`
   nav,
   section {
     display: block;
+  }
+
+  li {
+    list-style: none;
   }
 
 
