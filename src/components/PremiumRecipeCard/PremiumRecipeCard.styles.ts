@@ -38,9 +38,12 @@ export const PremiumRecipeCardContainer = styled.div`
   }
 `;
 
-export const PremiumRecipeCardHeader = styled.div`
+export const PremiumRecipeCardHeader = styled.div<{ imageUrl: string }>`
   position: relative;
   height: 200px;
+
+  background: url(${props => props.imageUrl}) no-repeat center center;
+  background-size: cover;
 `;
 
 export const PremiumRecipeCardHeaderOverlay = styled.div`

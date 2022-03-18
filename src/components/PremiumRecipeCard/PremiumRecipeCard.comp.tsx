@@ -1,5 +1,4 @@
 import * as Styles from './PremiumRecipeCard.styles';
-import food from '../../assets/food.png';
 import { ReactComponent as Trophy } from '../../assets/trophy.svg';
 import { ReactComponent as Heart } from '../../assets/heart.svg';
 import { ReactComponent as Clock } from '../../assets/clock.svg';
@@ -42,9 +41,7 @@ export function PremiumRecipeCard({
 
   return (
     <Styles.PremiumRecipeCardContainer>
-      <Styles.PremiumRecipeCardHeader>
-        <img src={food} alt="food" />
-
+      <Styles.PremiumRecipeCardHeader imageUrl={recipe.images[0].url}>
         <Styles.PremiumRecipeCardHeaderOverlay />
 
         <Styles.PremiumRecipeCardHeaderHoverOverlay />
