@@ -81,7 +81,7 @@ export function PremiumRecipeCard({
           <Styles.PremiumRecipeCardTimeToMake>
             <Clock />
 
-            <span>{recipe.details.preparationTimeMinutes}</span>
+            <span>{recipe.preparationTimeMinutes}</span>
           </Styles.PremiumRecipeCardTimeToMake>
 
           <Styles.PremiumRecipeCardCalories>

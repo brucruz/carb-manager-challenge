@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactComponent as Logo } from './assets/cm-logo.svg';
 import { PremiumRecipeCard } from './components/PremiumRecipeCard/PremiumRecipeCard.comp';
 import * as Styles from './styles/App.styles';
+import { EnergyUnit } from './utils/convertEnergyToUserPreferenceUnit';
 
 export interface Recipe {
   id: string;
@@ -23,7 +24,7 @@ export interface Recipe {
       proteins: string;
       carbs: string;
       fats: string;
-      energy: 'kJ' | 'kcal';
+      energy: EnergyUnit;
     };
     nutrients: {
       proteins: number;
@@ -31,8 +32,8 @@ export interface Recipe {
       fats: number;
     };
     energy: number;
-    preparationTimeMinutes: number;
   };
+  preparationTimeMinutes: number;
 }
 
 function App() {
