@@ -4,6 +4,7 @@ export interface Recipe {
   id: string;
   isPremium: boolean;
   isPublished: boolean;
+  isDeleted: boolean;
   status: string;
   title: string;
   images: {

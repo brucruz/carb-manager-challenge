@@ -29,14 +29,16 @@ function App() {
         <p>See the README file for assignment requirements.</p>
 
         <Styles.CmRecipeGrid>
-          {recipes.map(recipe => (
-            <li className="premium-recipe" key={recipe.id}>
-              <PremiumRecipeCard
-                recipe={recipe}
-                energyUnit={user.energyUnits}
-              />
-            </li>
-          ))}
+          {recipes
+            .filter(recipe => recipe.isPublished && !recipe.isDeleted)
+            .map(recipe => (
+              <li className="premium-recipe" key={recipe.id}>
+                <PremiumRecipeCard
+                  recipe={recipe}
+                  energyUnit={user.energyUnits}
+                />
+              </li>
+            ))}
         </Styles.CmRecipeGrid>
       </Styles.CmContainer>
     </div>
