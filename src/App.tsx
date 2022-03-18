@@ -56,7 +56,7 @@ function App() {
         <Styles.CmRecipeGrid>
           {recipes.map(recipe => (
             <li className="premium-recipe" key={recipe.id}>
-              <PremiumRecipeCard />
+              <PremiumRecipeCard recipe={recipe} />
             </li>
           ))}
         </Styles.CmRecipeGrid>

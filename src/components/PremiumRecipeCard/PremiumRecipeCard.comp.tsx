@@ -5,8 +5,37 @@ import { ReactComponent as Heart } from '../../assets/heart.svg';
 import { ReactComponent as Clock } from '../../assets/clock.svg';
 import { ReactComponent as Cals } from '../../assets/cals.svg';
 import { StarRating } from '../StarRating/StarRating.comp';
+import { Recipe } from '../../App';
+import {
+  MacroIndicator,
+  MacroIndicatorProps,
+} from '../MacroNutritientIndicator/MacroNutritientIndicator.comp';
 
-export function PremiumRecipeCard(): JSX.Element {
+export interface PremiumRecipeCardProps {
+  recipe: Recipe;
+}
+
+export function PremiumRecipeCard({
+  recipe,
+}: PremiumRecipeCardProps): JSX.Element {
+  const macros: MacroIndicatorProps[] = [
+    {
+      nutrient: 'protein',
+      value: recipe.details.nutrients.proteins,
+      unit: recipe.details.units.proteins,
+    },
+    {
+      nutrient: 'carbs',
+      value: recipe.details.nutrients.carbs,
+      unit: recipe.details.units.carbs,
+    },
+    {
+      nutrient: 'fats',
+      value: recipe.details.nutrients.fats,
+      unit: recipe.details.units.fats,
+    },
+  ];
+
   return (
     <Styles.PremiumRecipeCardContainer>
       <Styles.PremiumRecipeCardHeader>
@@ -20,19 +49,21 @@ export function PremiumRecipeCard(): JSX.Element {
           <Heart />
         </Styles.PremiumRecipeCardFavButton>
 
-        <Styles.PremiumRecipeCardPremiumTag>
-          <Trophy />
-          <span>Premium Recipe</span>
-        </Styles.PremiumRecipeCardPremiumTag>
+        {recipe.isPremium && (
+          <Styles.PremiumRecipeCardPremiumTag>
+            <Trophy />
+            <span>Premium Recipe</span>
+          </Styles.PremiumRecipeCardPremiumTag>
+        )}
       </Styles.PremiumRecipeCardHeader>
       <Styles.PremiumRecibeCardBottom>
         <Styles.PremiumRecipeCardTitle>
-          Low Carb Thai Chicken Curry With Coconut Cauliflower Rice
+          {recipe.title}
         </Styles.PremiumRecipeCardTitle>
 
         <Styles.PremiumRecipeCardRatings>
           <StarRating
-            activeStars={3}
+            activeStars={recipe.rating.score}
             totalStars={5}
             starDimensions={{
               width: '11.85px',
@@ -40,36 +71,31 @@ export function PremiumRecipeCard(): JSX.Element {
             }}
           />
 
-          <span>200 ratings</span>
+          <span>
+            {recipe.rating.count === 1
+              ? `${recipe.rating.count} rating`
+              : `${recipe.rating.count} ratings`}
+          </span>
         </Styles.PremiumRecipeCardRatings>
         <Styles.PremiumRecipeCardDetails>
           <Styles.PremiumRecipeCardTimeToMake>
             <Clock />
 
-            <span>24 min</span>
+            <span>{recipe.details.preparationTimeMinutes}</span>
           </Styles.PremiumRecipeCardTimeToMake>
 
           <Styles.PremiumRecipeCardCalories>
             <Cals />
 
-            <span>489 Calories</span>
+            <span>
+              {recipe.details.energy} {recipe.details.units.energy}
+            </span>
           </Styles.PremiumRecipeCardCalories>
 
           <Styles.PremiumRecipeCardMacros>
-            <Styles.PremiumRecipeCardMacro macro="carbs">
-              <div />
-              <span>20g</span>
-            </Styles.PremiumRecipeCardMacro>
-
-            <Styles.PremiumRecipeCardMacro macro="protein">
-              <div />
-              <span>16g</span>
-            </Styles.PremiumRecipeCardMacro>
-
-            <Styles.PremiumRecipeCardMacro macro="fats">
-              <div />
-              <span>6g</span>
-            </Styles.PremiumRecipeCardMacro>
+            {macros.map(macro => (
+              <MacroIndicator key={macro.nutrient} {...macro} />
+            ))}
           </Styles.PremiumRecipeCardMacros>
         </Styles.PremiumRecipeCardDetails>
       </Styles.PremiumRecibeCardBottom>
