@@ -11,6 +11,7 @@ import {
 } from '../MacroNutritientIndicator/MacroNutritientIndicator.comp';
 import { Recipe } from '../../@types/Recipe';
 import convertEnergyToUserPreferenceUnit from '../../utils/convertEnergyToUserPreferenceUnit';
+import { adjustPreparationTime } from '../../utils/adjustPreparationTime';
 
 export interface PremiumRecipeCardProps {
   recipe: Recipe;
@@ -84,7 +85,7 @@ export function PremiumRecipeCard({
           <Styles.PremiumRecipeCardTimeToMake>
             <Clock />
 
-            <span>{recipe.preparationTimeMinutes}</span>
+            <span>{adjustPreparationTime(recipe.preparationTimeMinutes)}</span>
           </Styles.PremiumRecipeCardTimeToMake>
 
           <Styles.PremiumRecipeCardCalories>
