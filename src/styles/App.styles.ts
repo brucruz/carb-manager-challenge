@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CmContainer = styled.div`
   max-width: 960px;
@@ -19,4 +19,14 @@ export const PremiumRecipe = styled.div`
   border: 2px dashed red;
   padding: 16px;
   list-style: none;
+`;
+
+export const CmRecipeGrid = styled.ul`
+  margin: 0 auto;
+  margin-top: 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px 16px;
+  width: fit-content;
 `;
