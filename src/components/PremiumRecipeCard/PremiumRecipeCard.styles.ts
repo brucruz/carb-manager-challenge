@@ -148,6 +148,7 @@ export const PremiumRecipeCardCalories = styled.div`
     line-height: 14px;
     color: #393c40;
     margin-left: 8px;
+    text-transform: capitalize;
   }
 `;
 

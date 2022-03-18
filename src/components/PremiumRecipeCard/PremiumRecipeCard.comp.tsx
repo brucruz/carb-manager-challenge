@@ -5,18 +5,21 @@ import { ReactComponent as Heart } from '../../assets/heart.svg';
 import { ReactComponent as Clock } from '../../assets/clock.svg';
 import { ReactComponent as Cals } from '../../assets/cals.svg';
 import { StarRating } from '../StarRating/StarRating.comp';
-import { Recipe } from '../../App';
 import {
   MacroIndicator,
   MacroIndicatorProps,
 } from '../MacroNutritientIndicator/MacroNutritientIndicator.comp';
+import { Recipe } from '../../@types/Recipe';
+import convertEnergyToUserPreferenceUnit from '../../utils/convertEnergyToUserPreferenceUnit';
 
 export interface PremiumRecipeCardProps {
   recipe: Recipe;
+  energyUnit: string;
 }
 
 export function PremiumRecipeCard({
   recipe,
+  energyUnit,
 }: PremiumRecipeCardProps): JSX.Element {
   const macros: MacroIndicatorProps[] = [
     {
@@ -88,7 +91,12 @@ export function PremiumRecipeCard({
             <Cals />
 
             <span>
-              {recipe.details.energy} {recipe.details.units.energy}
+              {convertEnergyToUserPreferenceUnit(
+                recipe.details.units.energy,
+                energyUnit === 'calories' ? 'kcal' : 'kJ',
+                recipe.details.energy,
+              ).toFixed(0)}{' '}
+              {energyUnit}
             </span>
           </Styles.PremiumRecipeCardCalories>
 
