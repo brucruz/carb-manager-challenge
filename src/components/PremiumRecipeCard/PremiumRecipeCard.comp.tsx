@@ -42,7 +42,10 @@ export function PremiumRecipeCard({
   ];
 
   return (
-    <Styles.PremiumRecipeCardContainer {...rest}>
+    <Styles.PremiumRecipeCardContainer
+      {...rest}
+      data-testid="premium-recipe-card-container"
+    >
       <Styles.PremiumRecipeCardHeader imageUrl={recipe.images[0].url}>
         <Styles.PremiumRecipeCardHeaderOverlay />
 

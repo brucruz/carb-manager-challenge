@@ -4,7 +4,7 @@ import { PremiumRecipeCard } from './PremiumRecipeCard.comp';
 import { Recipe } from '../../@types/Recipe';
 
 describe('PremiumRecipeCard.comp.tsx', () => {
-  it('should render', () => {
+  it('should render the component', () => {
     const recipe: Recipe = {
       id: '1',
       title: 'Recipe 1',
@@ -41,6 +41,8 @@ describe('PremiumRecipeCard.comp.tsx', () => {
 
     render(<PremiumRecipeCard recipe={recipe} energyUnit="calories" />);
 
-    // expect(screen.getByText('PremiumRecipeCard')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('premium-recipe-card-container'),
+    ).toBeInTheDocument();
   });
 });
