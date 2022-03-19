@@ -30,3 +30,10 @@ export const CmRecipeGrid = styled.ul`
   grid-gap: 16px 16px;
   width: fit-content;
 `;
+
+export const CmError = styled.div`
+  color: red;
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 22px;
+`;
