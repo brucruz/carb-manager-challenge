@@ -1,8 +1,7 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  transform: {
-    '^.+\\.svg$': '<rootDir>/svgTransform.js',
+  moduleNameMapper: {
+    '\\.svg$': '<rootDir>/src/tests/__mocks__/svg.js',
   },
 };

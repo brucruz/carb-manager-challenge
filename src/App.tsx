@@ -36,6 +36,7 @@ function App() {
                 <PremiumRecipeCard
                   recipe={recipe}
                   energyUnit={user.energyUnits}
+                  onClick={() => console.log('clicked on: ', recipe.title)}
                 />
               </li>
             ))}

@@ -7,12 +7,13 @@ import { StarRating } from '../StarRating/StarRating.comp';
 import {
   MacroIndicator,
   MacroIndicatorProps,
-} from '../MacroNutritientIndicator/MacroNutritientIndicator.comp';
+} from '../MacroNutrientIndicator/MacroNutrientIndicator.comp';
 import { Recipe } from '../../@types/Recipe';
 import convertEnergyToUserPreferenceUnit from '../../utils/convertEnergyToUserPreferenceUnit';
 import { adjustPreparationTime } from '../../utils/adjustPreparationTime';
+import { HTMLAttributes } from 'react';
 
-export interface PremiumRecipeCardProps {
+export interface PremiumRecipeCardProps extends HTMLAttributes<HTMLDivElement> {
   recipe: Recipe;
   energyUnit: string;
 }
@@ -20,6 +21,7 @@ export interface PremiumRecipeCardProps {
 export function PremiumRecipeCard({
   recipe,
   energyUnit,
+  ...rest
 }: PremiumRecipeCardProps): JSX.Element {
   const macros: MacroIndicatorProps[] = [
     {
@@ -40,7 +42,7 @@ export function PremiumRecipeCard({
   ];
 
   return (
-    <Styles.PremiumRecipeCardContainer>
+    <Styles.PremiumRecipeCardContainer {...rest}>
       <Styles.PremiumRecipeCardHeader imageUrl={recipe.images[0].url}>
         <Styles.PremiumRecipeCardHeaderOverlay />
 

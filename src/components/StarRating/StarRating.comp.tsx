@@ -19,7 +19,7 @@ export function StarRating({
   starDimensions,
 }: StarRatingProps): JSX.Element {
   return (
-    <Styles.StarRatingContainer>
+    <Styles.StarRatingContainer data-testid="star-rating-container">
       {[...new Array(totalStars)].map((_, index) => {
         const activeState = activeStars;
 
