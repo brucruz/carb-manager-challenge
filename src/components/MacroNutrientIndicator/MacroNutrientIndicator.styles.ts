@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Nutrients } from './MacroNutritientIndicator.comp';
+import { Nutrients } from './MacroNutrientIndicator.comp';
 
 export const PremiumRecipeCardMacro = styled.div<{
   macro: Nutrients;

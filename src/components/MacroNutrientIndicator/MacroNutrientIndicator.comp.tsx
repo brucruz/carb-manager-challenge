@@ -1,4 +1,4 @@
-import * as Styles from './MacroNutritientIndicator.styles';
+import * as Styles from './MacroNutrientIndicator.styles';
 
 export type Nutrients = 'protein' | 'carbs' | 'fats';
 export interface MacroIndicatorProps {

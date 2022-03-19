@@ -6,8 +6,8 @@
 [x] Use SVG-s for the custom icons. These can be grabbed from the Figma file.
 [x] Make sure the Recipe title gets truncated after 2 lines
 [x] The star ratings should be able to work with half-stars.
-[] If a recipe duration is longer than 60 minutes, the format should be x hr x min
-[] Make sure that energy information is displayed based on user settings (either as calories or kJ)
+[x] If a recipe duration is longer than 60 minutes, the format should be x hr x min
+[x] Make sure that energy information is displayed based on user settings (either as calories or kJ)
 
 ### Interactions
 
