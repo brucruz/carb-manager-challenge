@@ -1,4 +1,4 @@
-# Carb Manager challenge
+# Carb Manager Challenge
 
 This project was based on the following Figma design:
 
