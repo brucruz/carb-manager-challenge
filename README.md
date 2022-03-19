@@ -18,7 +18,7 @@ This project was based on the following Figma design:
 
 [https://www.figma.com/file/Hv0bOihxG5M40ASYsFBrVR/Interview-Assignment?node-id=0%3A1](https://www.figma.com/file/Hv0bOihxG5M40ASYsFBrVR/Interview-Assignment?node-id=0%3A1)
 
-You can check the other provided instructions in the [instructions file](INSTRUCTIONS.md).
+You can check the other provided instructions in [this file](INSTRUCTIONS.md).
 
 ---
 
